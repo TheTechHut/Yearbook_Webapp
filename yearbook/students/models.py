@@ -1,3 +1,4 @@
+
 from django.db import models
 
 class Student(models.Model):
@@ -8,4 +9,7 @@ class Student(models.Model):
 
     def __str__(self):
         return self.name
+
+    class Meta:
+        ordering = ['student_class']  # Order students by class
 
