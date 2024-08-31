@@ -1,11 +1,12 @@
-from . import views
-from django.urls import path 
-from .views import Project_list
-from .views import home
-from Projects.views import root_view
+from django.urls import path
+from .views import ProjectListCreate, ProjectDetail, Project_list
 
 urlpatterns = [
-    path('home/', home, name='home'),  # Home page URL
-    path("Projects/", Project_list, name="Project_list"),
-    path('', root_view, name='root'), #Root URL pattern
-]
+    #API Endpoints
+    path('projects/', ProjectListCreate.as_view(), name='project-list-create'),# For listing and creating projects
+    path('projects/<int:pk>/', ProjectDetail.as_view(), name='project-detail'),# For retrieving, updating or deleting by its primary key
+
+    #Web Page View
+    path('', Project_list, name='project-list'), # Serves the 'Projects/' URL for web view
+] 
+
