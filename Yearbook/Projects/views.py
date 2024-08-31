@@ -8,7 +8,7 @@ def home(request):
     return render(request, 'Projects/home.html')
 
 def root_view(request):
-    return render(request, 'home.html')
+    return render(request, 'Projects/home.html')
 
 def Project_list(request):
     Projects = Project.objects.all()
