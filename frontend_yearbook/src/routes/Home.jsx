@@ -1,14 +1,10 @@
 
 import Hero from '../components/Hero';
 import Navbar from '../components/Navbar'
-import Testimonials from '../components/Testimonials';
 import Title from '../components/Title';
-import SlideItems from '../components/SlideItems';
-import Feature from '../components/Feature';
 import { About } from '../components/About';
 import Campus from '../components/Campus';
 import Carousel from '../components/Carousel';
-import Footer from '../components/Footer';
 import Footer2 from '../components/Footer2';
 
 function Home() {
