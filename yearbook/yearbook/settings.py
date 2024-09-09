@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
     'students',
     'Projects',
     'drf_yasg',
@@ -55,6 +56,16 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'Yearbook.urls'
+
+CORS_ALLOWED_ORIGINS = [
+    'http://localhost:5173',
+]
+# Path to the media directory
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+# URL that serves the media files
+MEDIA_URL = '/media/'
+
 
 TEMPLATES = [
     {

@@ -4,6 +4,9 @@ import program_1 from '../assets/program-1.png'
 import program_2 from '../assets/program-2.png'
 import program_3 from '../assets/program-3.png'
 import white_arrow from '../assets/white-arrow.png'
+import StudentList from './StudentList'
+import StudentForm from './StudentForm'
+
 
 function Student () {
     return(
@@ -57,6 +60,8 @@ function Student () {
                     text="John Doe is a student of Computer Science at the University of California, Berkeley. He is a passionate coder and loves to travel."
                 />
             </div>
+            <StudentForm/>
+            <StudentList />
             <button className='dark-btn'>See more here <img src={white_arrow} alt="" /></button>
         </div>
     )
