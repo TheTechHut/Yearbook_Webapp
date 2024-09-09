@@ -57,14 +57,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'students',
-<<<<<<< HEAD
     "rest_framework",
     "corsheaders",
-=======
     'Projects',
-    'drf_yasg',
-    'corsheaders',
->>>>>>> 245c3655fcce285b1b5f9f160b43e8d3c1c20c40
+    # 'drf_yasg',
 ]
 
 MIDDLEWARE = [
@@ -75,14 +71,10 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-<<<<<<< HEAD
-    "corsheaders.middleware.CorsMiddleware",
-=======
     'corsheaders.middleware.CorsMiddleware',
->>>>>>> 245c3655fcce285b1b5f9f160b43e8d3c1c20c40
 ]
 
-ROOT_URLCONF = 'Yearbook.urls'
+ROOT_URLCONF = 'yearbook.urls'
 
 TEMPLATES = [
     {
@@ -100,7 +92,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'Yearbook.wsgi.application'
+# WSGI_APPLICATION = 'Yearbook.wsgi.application'
 
 
 # Database
@@ -108,8 +100,12 @@ WSGI_APPLICATION = 'Yearbook.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': os.getenv('DB_NAME'),
+        'USER': os.getenv('DB_USER'),
+        'PASSWORD': os.getenv('DB_PWD'),
+        'HOST': os.getenv('DB_HOST'),
+        'PORT': os.getenv('DB_PORT'),
     }
 }
 

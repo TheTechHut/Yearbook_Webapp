@@ -13,7 +13,9 @@ const Students = () => {
         cName="hero-mid"
         heroImg='src/assets/gallery-1.png'
         title="Students Portfolio"
-        btnClass="hide"
+        buttonText="Add Your Portfollio"
+        url="/portfollio"
+        btnClass="show"
     />
       <PortfolioList/>
       <Footer/>

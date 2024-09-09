@@ -8,6 +8,7 @@ import Portfollio from "./components/Portfollio";
 import './App.css';
 import Students from "./pages/Students";
 import Projects from "./pages/Projects";
+import ProjectForm from "./components/ProjectForm";
 
 
 function Logout() {
@@ -34,6 +35,15 @@ function App() {
         </ProtectedRoute>
       }
       />
+      <Route
+      path="/projects"
+      element={
+        <ProtectedRoute>
+          <ProjectForm/>
+        </ProtectedRoute>
+      }
+      />
+
       <Route path="/" element={<Home />} />
       <Route path="/login" element={<Login />} />
       <Route path="/logout" element={<Logout />} />

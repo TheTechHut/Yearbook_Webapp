@@ -3,7 +3,7 @@ import api from "../api";
 import { useNavigate } from "react-router-dom";
 import { ACCESS_TOKEN, REFRESH_TOKEN } from "../constants";
 import '../styles/Form.css';
-// import LoadingIndicator from "./LoadingIndicator";
+import LoadingIndicator from "./LoadingIndicator";
 
 
 function Form({route, method}) {
@@ -39,7 +39,7 @@ function Form({route, method}) {
         <input className="form-input" type="text" placeholder="Username" name="username" value={username} onChange={(e) => setUsername(e.target.value)} />
         <input className="form-input" type="password" placeholder="Password" name="password" value={password} onChange={(e) => setPassword(e.target.value)} />
         <button className="form-button" type="submit">{name}</button>
-        {/* {Loading && <LoadingIndicator />} */}
+        {Loading && <LoadingIndicator />}
     </form>
     ) 
 }

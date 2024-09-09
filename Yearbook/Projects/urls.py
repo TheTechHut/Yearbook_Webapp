@@ -1,5 +1,7 @@
 from django.urls import path
 from .views import ProjectListCreate, ProjectDetail, Project_list
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     #API Endpoints
@@ -8,5 +10,5 @@ urlpatterns = [
 
     #Web Page View
     path('', Project_list, name='project-list'), # Serves the 'Projects/' URL for web view
-] 
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
