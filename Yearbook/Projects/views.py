@@ -1,6 +1,8 @@
 # Projects/views.py
 from django.http import JsonResponse
 from rest_framework import generics
+from rest_framework.permissions import IsAuthenticated
+from rest_framework.generics import CreateAPIView
 from .models import Project
 from .serializers import ProjectSerializer
 
@@ -19,3 +21,12 @@ def Project_list(request):
     serializer = ProjectSerializer(Projects, many = True)
     # Return the serialized data as a JSON
     return JsonResponse(serializer.data, safe=False)
+
+class ProjectCreateView(CreateAPIView):
+    queryset = Project.objects.all()
+    serializer_class = ProjectSerializer
+    permission_classes = [IsAuthenticated]
+
+    def perform_create(self, serializer):
+        # Save project with the logged-in student's profile
+        serializer.save(student=self.request.user.student)
